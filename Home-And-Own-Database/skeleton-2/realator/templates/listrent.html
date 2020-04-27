@@ -1,0 +1,235 @@
+
+    <html>
+      <head>
+      <style>
+  
+      /** Nav Bar Contents*/
+  
+      .navbar {
+      overflow: hidden;
+      background-color: #333;
+      }
+  
+      .navbar a {
+      float: left;
+      font-size: 16px;
+      color:white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      }
+  
+      .dropdown {
+      float: left;
+      overflow: hidden;
+      }
+  
+      .dropdown .dropbtn {
+      font-size: 16px;  
+      border: none;
+      outline: none;
+      color: white;
+      padding: 14px 16px;
+      background-color: inherit;
+      font-family: inherit;
+      margin: 0;
+      }
+  
+      .navbar a:hover, .dropdown:hover .dropbtn {
+      background-color: pink;
+      color: #333
+      }
+  
+      .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: pink;
+      color: #333;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+      }
+  
+      .dropdown-content a {
+      float: none;
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      text-align: left;
+      }
+  
+      .dropdown-content a:hover {
+      background-color: rgb(227, 117, 136);
+      color: #333
+      }
+  
+      .dropdown:hover .dropdown-content {
+      display:table-column;
+      }
+  
+      /**Selection Customization*/
+      .custom {
+      position: relative;
+      color: black;
+      font-size: medium;
+      font-family: 'Times New Roman'; 
+      margin-bottom: 25;
+      margin-top: 50;
+      width: 180;
+      height: 25;
+      }
+  
+      select:after {
+      position: absolute;
+      content: "";
+      top: 14px;
+      right: 10px;
+      width: 0;
+      height: 0;
+      border: 6px solid transparent;
+      border-color: #fff transparent transparent transparent;
+      }
+  
+  
+      input[type=button], input[type=submit], input[type=reset] {
+      background-color: pink;
+      color:#333;
+      padding: 14px 25px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-family: 'Times New Roman';
+      font-size: medium;
+      }
+      a:link {
+        background-color: pink;
+      }
+       a:visited {
+      background-color:pink;
+      padding: 14px 25px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      }
+  
+        a:hover, a:active {
+        background-color: rgb(245, 227, 230);
+}
+    input:hover, input:active {
+      background-color: rgb(245, 227, 230);
+}
+        .agent a {
+          float:right;
+          background-color: #333;
+        }
+
+        input[type=text] {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        box-sizing: border-box;
+        border-bottom: 2px solid pink;
+        border-radius: 4px;
+      }
+  
+        </style>
+   <!-- Load an icon library -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+   <div class="navbar">
+      <a href="/"><i class="fa fa-fw fa-home"></i>Home</a>
+      <div class="dropdown">
+        <button class="dropbtn"><i class="fa fa-fw fa-search"></i>View Homes 
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="/sale">For Sale</a>
+          <a href="/rent">For Rent</a>
+        </div>
+      </div> 
+      <div class="dropdown">
+        <button class="dropbtn"><i class="fa fa-fw fa-search"></i>List A Home
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="/list/sale">For Sale</a>
+          <a href="/list/
+          rent">For Rent</a>
+        </div>
+      </div> 
+      <div class="dropdown">
+        <button class="dropbtn"><i class="fa fa-remove"></i>Remove A Home 
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="/remove/sale">For Sale</a>
+          <a href="/remove/rent">For Rent</a>
+        </div>
+      </div> 
+
+      <div class="dropdown">
+        <button class="dropbtn"><i class="fa fa-edit"></i>Change Status Of A Home
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="/sale/status">For Sale</a>
+          <a href="/rent/status">For Rent</a>
+        </div>
+      </div> 
+  
+      <div class="agent">
+      <a href="#">(Agent Mode)</a>
+    </div>
+    </div>
+  
+  
+
+  
+      <script>
+        document.addEventListener("DOMContentLoaded", () => {
+          const rows = document.querySelectorAll("tr[data-href]");
+  
+          rows.forEach(row => {
+            row.addEventListener("click", () => {
+              window.location.href = row.dataset.href;
+            });
+          });
+        });
+      
+      </script>
+    </body>
+  </html>
+  
+
+
+
+<html>
+  <head>
+    <title>{{ name }}</title>
+  </head>
+  <body>
+    <h1>List A Home For Rent</h1>
+    <form method=POST>
+    status:<input name="status" type="text"/>
+
+    rentprice:<input name="rentprice" type="text"/>
+
+    address: <input name="address" type="text"/>
+
+    beds:<input name="beds" type="text"/>
+
+    baths:<input name="baths" type="text"/>
+
+    size: <input name="size" type="text"/>
+
+    agent_id:<input name="agent-id" type="text"/>
+    
+    <input type="file" id="myFile" name="filename">
+
+
+    <input type="submit" value="List Home"/>
+    </form>
+  </body>
+</html>
+
