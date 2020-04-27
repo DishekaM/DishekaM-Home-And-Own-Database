@@ -2,6 +2,7 @@
  The Home and Own Real Estate database will not only display the available homes for sale and for rent, but it will personalize the agents experience with all the tools they need to personalize the customer/buyers’ experience. We want to make the home listing and removing process easy and efficient for the user. 
 
 **To begin DB project!**
+
 Make sure you are in the skeleton-2 folder before running the following commands:
 1. export FLASK_APP=realator
 2. export FLASK_ENV=development
