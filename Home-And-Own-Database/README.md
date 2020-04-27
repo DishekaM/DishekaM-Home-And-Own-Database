@@ -1,5 +1,6 @@
 # Home-And-Own-Database
 **To begin DB project!**
+
 Make sure you are in the skeleton-2 folder before running the following commands:
 1. export FLASK_APP=realator
 2. export FLASK_ENV=development
